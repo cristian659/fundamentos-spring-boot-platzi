@@ -17,7 +17,17 @@ public class MyConfigurationBean {
     }
 
     @Bean
+    public MyOperationMultiplicate beanOperationOperation2(){
+        return new MyOperationMultiplicateImplement();
+    }
+
+    @Bean
     public MyBeanWithDependency beanOperationOperationWithDependency(MyOperation myOperation){
         return new MyBeanWithDependencyImplement(myOperation);
+    }
+
+    @Bean
+    public MyBeanMultiplicate beanOperationOperationMultiplicate(MyOperationMultiplicate myOperationMultiplicate){
+        return new MyBeanMultiplicateImplement(myOperationMultiplicate);
     }
 }
